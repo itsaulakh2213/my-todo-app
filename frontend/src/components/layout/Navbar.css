@@ -1,0 +1,24 @@
+.Navbar-Container{
+    margin-top: .1rem;
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    background-color: #ede7e7;
+}
+
+.Navbar-Container .Navbar{
+   color: #616161;
+   margin: 4rem;
+   cursor: pointer;
+}
+.Navbar-Container .Navbar:hover{
+    color : #ED6C02 ;
+   
+}
+.active{
+    color : #ED6C02 !important ; 
+}
+
+.Navbar-Container .Navbar .NavbarItem{
+    margin-top: 1rem; 
+}

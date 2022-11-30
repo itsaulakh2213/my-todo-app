@@ -1,0 +1,29 @@
+
+
+*{
+    margin: 0rem;
+    padding: 0rem;
+}
+body{
+    margin: 0rem;
+    padding: 0rem;
+   background-color:#ED6C02;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    html {
+      font-size: 90%;
+    }
+  }
+
+  @media screen and (min-width: 420px) and (max-width: 768px) {
+    html {
+      font-size: 70%;
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    html {
+      font-size: 50%;
+    }
+  }

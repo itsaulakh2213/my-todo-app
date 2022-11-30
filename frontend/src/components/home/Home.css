@@ -1,0 +1,40 @@
+
+.home-container{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 4.5rem;
+    width: 100%;
+    align-items: center;
+    
+}
+.home-container .card{
+    border: 0.1rem solid #ED6C02;
+    box-shadow: 0rem 0rem .5rem rgba(0, 0, 0, 0.312);
+    display: flex;
+    flex-direction: column;
+    width: 31rem;
+    padding: 1.5rem 2rem;
+    align-items: center;
+    border-radius: .5rem;
+    background-color:#ede7e7 ;
+}
+
+.home-container .card .title {
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.home-container .card .btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0rem;
+    
+}
+
+.home-container .card .btn-container .btn {
+    width: 7rem;
+}
