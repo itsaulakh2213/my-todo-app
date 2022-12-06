@@ -58,11 +58,23 @@ exports.loginUser = catchAsyncError( async (req, res, next)=> {
         })
     }
     const token = await user.getJsonWebToken()
-    console.log(token)
 
     res.status(200).cookie("iStore", token).json({
         success : true,
         message:`user successfully login`,
         token
+    })
+})
+
+exports.getUser = catchAsyncError( async (req, res, next)=>{
+
+    const data = await User.find({
+        _id:req.user._id
+    })
+
+    res.status(200).json({
+        success : true,
+        message:`get all todo items successfully`,
+        data
     })
 })

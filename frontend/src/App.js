@@ -11,11 +11,11 @@ function App() {
   return (
   <Fragment>
     <Routes>
-      <Route exact path='/' element={<Home/>}/>
-      <Route exact path='register' element={<Register/>}/>
-      <Route exact path='login' element={<Login/>}/>
-      <Route exact path='post' element={<Post/>}/>
-      <Route exact path='profile' element={<Profile/>}/>
+      <Route  path='/' element={<Home/>}/>
+      <Route  path='register' element={<Register/>}/>
+      <Route  path='login' element={<Login/>}/>
+      <Route  path='/post' element={<Post/>}/>
+      <Route  path='profile' element={<Profile/>}/>
     </Routes>
   </Fragment>
   );

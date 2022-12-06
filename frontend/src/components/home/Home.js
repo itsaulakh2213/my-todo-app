@@ -1,43 +1,62 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Button , Typography,Card } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from '@mui/icons-material/Edit'
 import Navbar from "../layout/Navbar";
 import "./Home.css";
+import { useSelector, useDispatch } from "react-redux";
+import {deleteTodo, getAllTodo} from "../reducers/mytodo"
 
 export default function Home() {
+  const dispatch = useDispatch()
+  const  { data }  = useSelector( state => state.mytodo )
+  
+  useEffect(() => {
+   dispatch(getAllTodo())  
+ }, [dispatch] )
+ 
+ 
+  
+
+ 
+
   return (
     <Fragment>
       <Navbar />
       <section className="home-container">
-        <Card className="card" sx={{ maxWidth: 560 }}>
-              <Typography gutterBottom variant="h4" component="div" textAlign="center" className="title">
-                Lizard
-              </Typography>
-              <Typography variant="body2" color="text.secondary" textAlign="center" className="description">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
-              </Typography>
-          <div className="btn-container">
-          <Button
-            variant="contained"
-            color="warning"
-            endIcon={<DeleteIcon />}
-            className="btn"
-            margin='6px 12px'
-          >
-            Delete
-          </Button>
-          <Button
-            variant="contained"
-            color="warning"
-            endIcon={<EditIcon />}
-            className="btn"
-          >
-            Edit
-          </Button>
-          </div>
-        </Card>
+        { data.map( item => {
+          return(
+            <Card className="card" sx={{ maxWidth: 560 }} key={item._id}>
+            <Typography gutterBottom variant="h4" component="div" textAlign="center" className="title">
+              {item.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" textAlign="center" className="description">
+              {item.description}
+            </Typography>
+        <div className="btn-container">
+        <Button
+          variant="contained"
+          color="warning"
+          endIcon={<DeleteIcon />}
+          className="btn"
+          margin='6px 12px'
+          onClick={() => dispatch(deleteTodo(item._id))}
+        >
+          Delete
+        </Button>
+        <Button
+          variant="contained"
+          color="warning"
+          endIcon={<EditIcon />}
+          className="btn"
+        >
+          Edit
+        </Button>
+        </div>
+      </Card>)
+        
+        })}
+        
       </section>
     </Fragment>
   );

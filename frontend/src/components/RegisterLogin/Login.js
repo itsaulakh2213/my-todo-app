@@ -19,6 +19,9 @@ export default function Login() {
   if (token) {
     navigate("/");
   }
+  else if(token==="undefined") { 
+    navigate("/login");
+  }
 
   const Login = () => {
       dispatch(LoginUser({ email, password }));

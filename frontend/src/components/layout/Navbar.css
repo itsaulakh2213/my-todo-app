@@ -4,6 +4,9 @@
     height: 4rem;
     text-align: center;
     background-color: #ede7e7;
+    position:fixed;
+    z-index: 1;
+    box-shadow: 0rem .2rem .2rem rgba(0, 0, 0, 0.478) ;
 }
 
 .Navbar-Container .Navbar{

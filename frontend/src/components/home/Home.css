@@ -18,12 +18,26 @@
     align-items: center;
     border-radius: .5rem;
     background-color:#ede7e7 ;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
 }
 
 .home-container .card .title {
+    color: #ED6C02;
     text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:1.5rem;
+    text-shadow: 0rem 0rem .1rem rgba(0, 0, 0, 0.312);
+    border: .1rem solid #ED6C02;
+    width: 28rem;
+    text-align: center;
+    border-radius: .5rem;
+    padding: .8rem;
+}
+.home-container .card .description {
+    text-transform:capitalize;
     font-family:Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    font-size: 1.3rem;
 }
 
 .home-container .card .btn-container {

@@ -17,6 +17,7 @@
     padding: 2rem 0rem;
     align-items: center;
     background-color:#ede7e7 ;
+    margin-top: 1.5rem;
 }
 .Profile-container .card .btn-container {
     display: flex;
