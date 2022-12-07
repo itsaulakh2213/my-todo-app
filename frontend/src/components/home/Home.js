@@ -5,21 +5,18 @@ import EditIcon from '@mui/icons-material/Edit'
 import Navbar from "../layout/Navbar";
 import "./Home.css";
 import { useSelector, useDispatch } from "react-redux";
-import {deleteTodo, getAllTodo} from "../reducers/mytodo"
+import { deleteTodo, getAllTodo} from "../reducers/todo"
+
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const dispatch = useDispatch()
-  const  { data }  = useSelector( state => state.mytodo )
+  const  { data }  = useSelector( state => state.todo )
   
   useEffect(() => {
    dispatch(getAllTodo())  
  }, [dispatch] )
  
- 
-  
-
- 
-
   return (
     <Fragment>
       <Navbar />
@@ -44,14 +41,7 @@ export default function Home() {
         >
           Delete
         </Button>
-        <Button
-          variant="contained"
-          color="warning"
-          endIcon={<EditIcon />}
-          className="btn"
-        >
-          Edit
-        </Button>
+        <Link to="/todo/update/:id" className="link">Edit <EditIcon /></Link>
         </div>
       </Card>)
         

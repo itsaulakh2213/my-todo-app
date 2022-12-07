@@ -1,0 +1,55 @@
+.main-edit {
+    display:flex;
+    justify-content: center;
+    
+}
+
+.edit-container{
+    background-color: #ede7e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35rem;
+    border-radius: .5rem;
+    height: 30rem;
+    border: 0.1rem solid #ED6C02;
+    box-shadow: 0rem 0rem .5rem rgba(0, 0, 0, 0.312);
+    margin-top: 1.5rem;
+}
+
+.edit-container .clear{
+   width: 93%;
+   margin: 1rem ;
+   text-align: end;
+   color: #ED6C02;
+   font-size: 1rem;
+}
+
+.edit-container .input{
+    margin-top: 1rem ;
+    margin-bottom: 1rem ;
+    width: 30rem;
+}
+
+.edit-container .btn{
+    width: 30rem;
+    height: 3.4rem;
+    margin-top: 1rem ;
+    margin-bottom: 1rem ;
+}
+
+
+.edit-container h2 {
+    color: #ED6C02;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:2rem;
+    text-shadow: 0rem 0rem .1rem rgba(0, 0, 0, 0.312);
+    border: .1rem solid #ED6C02;
+    width: 28rem;
+    text-align: center;
+    border-radius: .5rem;
+    padding: 1rem;
+
+}

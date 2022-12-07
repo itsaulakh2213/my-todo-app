@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import { Button, TextField, LinearProgress } from '@mui/material';
+import { Button, TextField, LinearProgress} from '@mui/material';
 import "./Post.css"
 import Navbar from '../layout/Navbar';
 import { useDispatch, useSelector } from "react-redux";
@@ -19,7 +19,7 @@ export default function Post() {
       <Navbar/>
       {loading && <LinearProgress color="inherit" />}
       <div className='MainPost'>
-      <section className="Post-container">
+      <form  className="Post-container">
         <h2 color="warning" >Create Todo</h2>
       <TextField
           className='input'
@@ -49,8 +49,8 @@ export default function Post() {
           minRows={4}
         />
    
-    <Button className="btn" variant="contained" color="warning" onClick={()=>post()} >Create</Button>
-      </section>
+    <Button className="btn" onClick={()=>post()}  variant="contained" color="warning"  >Create</Button>
+      </form>
       </div>
     </Fragment>
   )

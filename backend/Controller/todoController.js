@@ -83,3 +83,16 @@ exports.updateTodo = catchAsyncError( async (req, res, next)=>{
         message:`update todo successfully`,
     })
 })
+
+exports.GetSingleTodo = catchAsyncError( async (req, res, next)=>{
+
+    const removeData = await Todo.findOne({
+        _id:req.params.id
+    })
+
+    res.status(200).json({
+        success : true,
+        message:`get todo successfully`,
+        removeData
+    })
+})

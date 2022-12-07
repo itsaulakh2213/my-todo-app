@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { config, config2 } from './Request'
 
 const initialState = {
     token: "",
@@ -9,28 +10,6 @@ const initialState = {
 }
 
 
-const config = async (api, body) => {
-    const res = await fetch(api, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": localStorage.getItem("token"),
-      },
-      body: JSON.stringify(body),
-    });
-    return await res.json();
-  };
-
-  const config2 = async (api, type) => {
-    const res = await fetch(api, {
-      method: type,
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": localStorage.getItem('token')
-      },
-    });
-    return await res.json();
-  };
 
   export const UserDetail = createAsyncThunk(
     'UserDetail',
@@ -43,14 +22,14 @@ const config = async (api, body) => {
 export const RegisterUser = createAsyncThunk(
     'RegisterUser',
   (body) => {
-      const response = config("/api/register", body)
+      const response = config("/api/register", "post", body)
       return response
     }
   )
 export const LoginUser = createAsyncThunk(
     'LoginUser',
   (body) => {
-      const response = config("/api/login", body)
+      const response = config("/api/login", "post" , body)
       return response
     }
   )

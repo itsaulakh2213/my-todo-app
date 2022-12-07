@@ -74,7 +74,7 @@ exports.getUser = catchAsyncError( async (req, res, next)=>{
 
     res.status(200).json({
         success : true,
-        message:`get all todo items successfully`,
+        message:`fetch user successfully`,
         data
     })
 })
