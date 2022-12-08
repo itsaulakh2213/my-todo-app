@@ -23,7 +23,7 @@ export default function Register() {
   }
 
   const Register = () => {
-     dispatch(RegisterUser({ name, email, number, password }));
+    dispatch(RegisterUser({ name, email, number, password }));
   };
 
   return (

@@ -1,25 +1,34 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Button, TextField } from "@mui/material";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./Edit.css";
-import { useNavigate, useParams } from "react-router-dom";
-import ClearIcon from '@mui/icons-material/Clear';
-import { editTodo } from "../reducers/todo"
+import { Link, useParams } from "react-router-dom";
+import ClearIcon from "@mui/icons-material/Clear";
+import { editTodo, GetSingleTodo } from "../reducers/todo";
 export default function Edit() {
-  const [title, setTitle] = useState("");
-  const [des, setDes] = useState("");
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const { id } = useParams()
-  const post = () => {
-    dispatch(editTodo(id,{}));
-    navigate("/")
+  const { id } = useParams();
+  useEffect(() => {
+    fetchUser();
+  },[dispatch]);
+  const fetchUser = async () => {
+    await dispatch(GetSingleTodo(id));
   };
+  const {data } = useSelector((state) => state.todo);
+  const [ title, setTitle] = useState(data.title);
+  const [ description, setDescription] = useState(data.description)
+  
+  const post = ()=>{
+    dispatch(editTodo( id , { title, description}))
+  }
+  
   return (
     <Fragment>
       <div className="main-edit">
-        <section className="edit-container">
-          <div className="clear" onClick={()=>navigate("/")}><ClearIcon/></div>
+ <section className="edit-container">
+          <Link className="clear" to="/">
+            <ClearIcon />
+          </Link>
           <h2 color="warning">Update Todo</h2>
           <TextField
             className="input"
@@ -28,7 +37,7 @@ export default function Edit() {
             label="Title"
             type="text"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={(e) => setTitle( e.target.value )}
             InputLabelProps={{
               shrink: true,
             }}
@@ -39,14 +48,13 @@ export default function Edit() {
             color="warning"
             label="description"
             type="text"
-            value={des}
-            onChange={(e) => setDes(e.target.value)}
+            value={description }
+            onChange={(e) => setDescription( e.target.value )}
             InputLabelProps={{
               shrink: true,
             }}
             variant="outlined"
             multiline
-            minRows={4}
           />
 
           <Button

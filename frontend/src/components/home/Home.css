@@ -1,65 +1,61 @@
-
-.home-container{
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    margin-top: 4.5rem;
-    width: 100%;
-    align-items: center;
-    
+.home-container {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 4.5rem;
+  width: 100%;
+  align-items: center;
 }
-.home-container .card{
-    border: 0.1rem solid #ED6C02;
-    box-shadow: 0rem 0rem .5rem rgba(0, 0, 0, 0.312);
-    display: flex;
-    flex-direction: column;
-    width: 31rem;
-    padding: 1.5rem 2rem;
-    align-items: center;
-    border-radius: .5rem;
-    background-color:#ede7e7 ;
-    margin-bottom: 1rem;
-    margin-top: 1.5rem;
+.home-container .card {
+  border: 0.1rem solid #ed6c02;
+  box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.312);
+  display: flex;
+  flex-direction: column;
+  width: 31rem;
+  padding: 1.5rem 2rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: #ede7e7;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 .home-container .card .title {
-    color: #ED6C02;
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size:1.5rem;
-    text-shadow: 0rem 0rem .1rem rgba(0, 0, 0, 0.312);
-    border: .1rem solid #ED6C02;
-    width: 28rem;
-    text-align: center;
-    border-radius: .5rem;
-    padding: .8rem;
+  color: #ed6c02;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
+  text-shadow: 0rem 0rem 0.1rem rgba(0, 0, 0, 0.312);
+  border: 0.1rem solid #ed6c02;
+  width: 28rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
 }
 .home-container .card .description {
-    text-transform:capitalize;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
+  text-transform: capitalize;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
 }
 
 .home-container .card .btn-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    text-align: center;
-    padding: 1rem 0rem;
-    
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0rem;
 }
 
 .home-container .card .btn-container .btn {
-    width: 7rem;
-    
+  width: 7rem;
 }
 .home-container .card .btn-container .link {
-    background-color: #ED6C02;
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    width: 7rem;
-    border-radius: .4rem;
-    text-decoration: none;
-    color: aliceblue;
+  background-color: #ed6c02;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  width: 7rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: aliceblue;
 }

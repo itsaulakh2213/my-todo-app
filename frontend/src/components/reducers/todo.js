@@ -13,20 +13,25 @@ export const getAllTodo = createAsyncThunk("getAllTodo", async () => {
   return res;
 });
 
-export const deleteTodo = createAsyncThunk("deleteTodo", (id) => {
-  const response = config2(`/api/removeTodo/${id}`, "delete");
+export const deleteTodo = createAsyncThunk("deleteTodo", async (id) => {
+  const response = await config2(`/api/removeTodo/${id}`, "delete");
   return response;
 });
 
-export const createTodo = createAsyncThunk("createTodo", (body) => {
-  const response = config("/api/createTodo", "post", body);
+export const createTodo = createAsyncThunk("createTodo", async (body) => {
+  const response = await config("/api/createTodo", "post", body);
   return response;
 });
 
-export const editTodo = createAsyncThunk("editTodo", (id, body) => {
-  const response = config(`/api/updateTodo/${id}`, "put", body);
+export const editTodo = createAsyncThunk("editTodo", async (id, body) => {
+  const response = await config(`/api/updateTodo/${id}`, "put", body);
   return response;
-})
+});
+
+export const GetSingleTodo = createAsyncThunk("GetSingleTodo", async (id) => {
+  const res = await config2(`/api/GetSingleTodo/${id}`, "get");
+  return res;
+});
 
 const todoReducer = createSlice({
   name: "todo",
@@ -53,6 +58,20 @@ const todoReducer = createSlice({
     [deleteTodo.fulfilled]: (state, { payload: { message } }) => {
       state.loading = false;
       state.message = message;
+    },
+    [editTodo.fulfilled]: (state, { payload: { message } }) => {
+      state.loading = false;
+      state.message = message;
+    },
+    [editTodo.pending]: (state) => {
+      state.loading = true;
+    },
+    [GetSingleTodo.fulfilled]: (state, { payload: { data } }) => {
+      state.loading = false;
+      state.data = data;
+    },
+    [GetSingleTodo.pending]: (state) => {
+      state.loading = true;
     },
   },
 });
